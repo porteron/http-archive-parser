@@ -1,0 +1,16 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "",
+    "port": 5432,
+    "username": "",
+    "password": "",
+    "database": "",
+    "schema": "public",
+    "synchronize": false,
+    "entities": [
+      "entities/*.js"
+    ]
+  }
+]
