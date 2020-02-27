@@ -65,9 +65,18 @@ Improper modification of these values can lead to unneccessary parsing condition
 
 `FIRST_CHAR_MIN_LEN` and `FIRST_CHAR_MAX_LEN` values are most sensitive. The smaller the `FIRST_CHAR_MIN_LEN` the more strings the parser will consider in the file. You should probably always have this value greater than 6 or 7. Most unique identifiers are greater than 7 so go ahead and set it higher if that is what you are looking for.  
 
-##### Below are the supported values
+
+### How it works
+
+`POST to {SERVER_HOST}/collection-event/parse`
+   - There are two supported ways to pass your file to the parser
+      1. Send the entire raw HAR contents in the request body
+      2. Send the name of the HAR file stored in S3
+
+
+#### Below are the supported config values
 ```js
-const config = {
+{
     LEVELS: [
         'request',
         'response'
@@ -93,6 +102,46 @@ const config = {
     FILTER_URL_VALUES: false,
 }
 ```
+
+### Example Requests for Various Parsing
+**Header Request Format**
+```
+Headers
+Content-Type	application/json
+mx-token	Ol692%73kBBfR62itn34nkl(sl20Mf8&&fnC7k3-Pwf42*
+```
+
+#### Shared Strings Parse
+```
+Request Body
+{
+	"report_type": "sharedStrings",
+	"format": "json", // or csv
+	"files": ["<S3 HAR FILE NAME>"]
+}
+```
+
+#### Entity List Parse
+```
+Request Body
+{
+	"report_type": "entityList",
+	"format": "json", // or csv
+	"files": ["<S3 HAR FILE NAME>"]
+}
+```
+
+#### HAR Differential 
+```
+Request Body
+{
+	"report_type": "differential",
+	"format": "json", // or csv
+	"files": ["<S3 HAR FILE NAME>", "<S3 HAR FILE TO DIFF AGAINST>"]
+}
+```
+
+
 
 ## Development
 ### Creating a new module
