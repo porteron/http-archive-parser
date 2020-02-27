@@ -2,7 +2,9 @@ const _ = require('lodash');
  
 let defaultTask = []
 
-
+/**
+ * THIS IS JUST A TEMPORARY UTIL FILE TO PRINT STATS
+ */
 console.log("Default Site Total Matches: ", defaultTask.length);
  
 console.log("Same Site Total Matches: ", sameSite.length);

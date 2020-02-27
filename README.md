@@ -105,7 +105,7 @@ Improper modification of these values can lead to unneccessary parsing condition
 ```js
 Headers
 Content-Type	application/json
-mx-token	Ol692%73kBBfR62itn34nkl(sl20Mf8&&fnC7k3-Pwf42*
+mx-token	TEST-KEY-PARSER
 ```
 
 Supported Request Body
@@ -113,7 +113,7 @@ Supported Request Body
 {
   "format": "json", // OPTIONAL - also accepts "csv" - default is json
   "save": bool, // OPTIONAL - true or false to save to bucket - default is true
-  "update": bool, // OPTIONAL - true or false to overwrite existing file - deafault is false
+  "update": bool, // OPTIONAL - true or false to overwrite existing file - default is false
   "report_type": "sharedStrings", // or "differential" or "entityList" 
   "files": ["<S3 HAR FILE NAME>"] // if differential pass two files
   // OR

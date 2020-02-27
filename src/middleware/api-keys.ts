@@ -7,7 +7,7 @@ export const API_KEYS: object = {
         valid: true,
         account: 'name',
     },
-    '2 ADD AN API KEY HERE': {
+    'TEST-KEY-PARSER': {
         id: 1,
         date: '1574294753201',
         valid: true,
