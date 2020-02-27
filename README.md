@@ -19,6 +19,9 @@ You can specify various reports to run on the HAR file.
 - Shared String Differential
 
 
+Currently Reports will be read and stored in S3. You will have to fill out the `.env` file with the proper credentials.
+There will be future support for using local filesystem. 
+
 ___ 
 
 
