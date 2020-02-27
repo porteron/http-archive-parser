@@ -111,13 +111,13 @@ mx-token	Ol692%73kBBfR62itn34nkl(sl20Mf8&&fnC7k3-Pwf42*
 Supported Request Body
 ```js
 {
- 	"report_type": "sharedStrings", // or differential or entityList, 
   "format": "json", // OPTIONAL - also accepts "csv" - default is json
-  "save": bool, // OPTIONAL - true or false to save to bucket, - default is true
+  "save": bool, // OPTIONAL - true or false to save to bucket - default is true
   "update": bool, // OPTIONAL - true or false to overwrite existing file - deafault is false
-	"files": ["<S3 HAR FILE NAME>"] // if differential pass two files
+  "report_type": "sharedStrings", // or "differential" or "entityList" 
+  "files": ["<S3 HAR FILE NAME>"] // if differential pass two files
   // OR
-  "raw": [{HAR1}], // if differential pass two HAR files as json objects,
+  "raw": [{HAR1}], // if differential pass two raw HAR files as json objects
 }
 ```
 
