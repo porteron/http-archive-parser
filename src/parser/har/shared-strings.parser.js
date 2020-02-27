@@ -430,9 +430,11 @@ const isDuplicate = (report, key, currentPage, _entry, second) => {
   return false
 }
 
-
+// COOKIES SHOW UP TWICE IN HAR REQ BODY, IGNORE ONE 
 const isCookieHeader = (type, entryType, IGNORE) => (IGNORE[entryType.name] || (type === 'header' && entryType.name === 'cookie'));
 
+
+// THIS IS A LARGE LIST OF HEADER/COOKIE/QUERYPARAM VALUES TO IGNORE
 const IGNORE = {
   "Age": true,
   "age": true,
