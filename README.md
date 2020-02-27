@@ -1,12 +1,12 @@
 <p align="center">
   <img src="https://www.svgrepo.com/show/221325/http.svg" width="320" alt="HTTP Logo" />
-  <span align="center" style="display:inline-block; font-size:30px; font-weight:800">Archive Tools</span>
+  <span align="center" style="display:inline-block; font-size:30px; font-weight:800">Archive Parser</span>
 </p>
 
 
 ## Description
 
-The **HTTP Archive Tool** stands up a server with endpoints to parse HTTP Archive files in various ways. It's initial purpose was to detect data privacy violations in a user session. Part of that system has been broken out into a more general purpose parser, which will expose *Shared Strings* in a user's session. **It helps identify dataflow between different host domains.**
+The **HTTP Archive Parser** stands up a server with endpoints to parse HTTP Archive files in various ways. It's initial purpose was to detect data privacy violations in a user session. Part of that system has been broken out into a more general purpose parser, which will expose *Shared Strings* in a user's session. **It helps identify dataflow between different host domains.**
 
 It looks to match strings such as "cookies", "headers", and  "query parameters".
 
@@ -108,12 +108,25 @@ Content-Type	application/json
 mx-token	Ol692%73kBBfR62itn34nkl(sl20Mf8&&fnC7k3-Pwf42*
 ```
 
+Supported Request Body
+```js
+{
+ 	"report_type": "sharedStrings", // or differential or entityList, 
+  "format": "json", // OPTIONAL - also accepts "csv" - default is json
+  "save": bool, // OPTIONAL - true or false to save to bucket, - default is true
+  "update": bool, // OPTIONAL - true or false to overwrite existing file - deafault is false
+	"files": ["<S3 HAR FILE NAME>"] // if differential pass two files
+  // OR
+  "raw": [{HAR1}], // if differential pass two HAR files as json objects,
+}
+```
+
 #### Shared Strings Parse
 ```js
 Request Body
 {
 	"report_type": "sharedStrings",
-	"format": "json", // or csv
+	"format": "json",
 	"files": ["<S3 HAR FILE NAME>"]
 }
 ```
@@ -123,7 +136,7 @@ Request Body
 Request Body
 {
 	"report_type": "entityList",
-	"format": "json", // or csv
+	"format": "json", 
 	"files": ["<S3 HAR FILE NAME>"]
 }
 ```
@@ -133,7 +146,7 @@ Request Body
 Request Body
 {
 	"report_type": "differential",
-	"format": "json", // or csv
+	"format": "json",
 	"files": ["<S3 HAR FILE NAME>", "<S3 HAR FILE TO DIFF AGAINST>"]
 }
 ```
@@ -182,7 +195,7 @@ ___
 ___
 
 
-**HTTP Archive Tool** is built with TypeScript [Nest](https://github.com/nestjs/nest) framework
+**HTTP Archive Parser** is built with TypeScript [Nest](https://github.com/nestjs/nest) framework
 
 ### Maintainers
 

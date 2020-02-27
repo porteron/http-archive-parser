@@ -15,10 +15,10 @@ async function bootstrap() {
   app.use(cors(corsOptions));
 
   const swaggerOptions = new DocumentBuilder()
-    .setTitle('HTTP Archive Tools API')
+    .setTitle('HTTP Archive Parsers API')
     .setDescription('HAR Tool API Documentation')
     .setVersion('1.0')
-    .addTag('HTTP Archive Tools')
+    .addTag('HTTP Archive Parsers')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerOptions);
