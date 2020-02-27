@@ -6,8 +6,6 @@
 
 ## Description
 
-**HTTP Archive Tool** is built with TypeScript [Nest](https://github.com/nestjs/nest) framework
-
 The **HTTP Archive Tool** stands up a server with endpoints to parse HTTP Archive files in various ways. It's initial purpose was to detect data privacy violations in a user session. Part of that system has been broken out into a more general purpose parser, which will expose *Shared Strings* in a user's session. **It helps identify dataflow between different host domains.**
 
 It looks to match strings such as "cookies", "headers", and  "query parameters".
@@ -65,15 +63,6 @@ Improper modification of these values can lead to unneccessary parsing condition
 
 `FIRST_CHAR_MIN_LEN` and `FIRST_CHAR_MAX_LEN` values are most sensitive. The smaller the `FIRST_CHAR_MIN_LEN` the more strings the parser will consider in the file. You should probably always have this value greater than 6 or 7. Most unique identifiers are greater than 7 so go ahead and set it higher if that is what you are looking for.  
 
-
-### How it works
-
-`POST to {SERVER_HOST}/collection-event/parse`
-   - There are two supported ways to pass your file to the parser
-      1. Send the entire raw HAR contents in the request body
-      2. Send the name of the HAR file stored in S3
-
-
 #### Below are the supported config values
 ```js
 {
@@ -102,6 +91,14 @@ Improper modification of these values can lead to unneccessary parsing condition
     FILTER_URL_VALUES: false,
 }
 ```
+
+### How it works
+
+`POST to {SERVER_HOST}/collection-event/parse`
+   - There are two supported ways to pass your file to the parser
+      1. Send the entire raw HAR contents in the request body
+      2. Send the name of the HAR file stored in S3
+
 
 ### Example Requests for Various Parsing
 **Header Request Format**
@@ -183,6 +180,9 @@ ___
 
 
 ___
+
+
+**HTTP Archive Tool** is built with TypeScript [Nest](https://github.com/nestjs/nest) framework
 
 ### Maintainers
 
