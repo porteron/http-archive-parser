@@ -58,6 +58,42 @@ $ npm run test:cov
 ```
 
 
+## Parser
+There are many properties you can customize for the parser. The config is located in the `parser/har/parser.config.js` file.
+
+Improper modification of these values can lead to unneccessary parsing conditions which leads to long parsing times.
+
+`FIRST_CHAR_MIN_LEN` and `FIRST_CHAR_MAX_LEN` values are most sensitive. The smaller the `FIRST_CHAR_MIN_LEN` the more strings the parser will consider in the file. You should probably always have this value greater than 6 or 7. Most unique identifiers are greater than 7 so go ahead and set it higher if that is what you are looking for.  
+
+##### Below are the supported values
+```js
+const config = {
+    LEVELS: [
+        'request',
+        'response'
+    ],
+    ENTRY_TYPES: [
+        'headers',
+        'cookies',
+        'queryString'
+    ],
+    FIRST_CHAR_MIN_LEN: 7,
+    FIRST_CHAR_MAX_LEN: 200,
+    REPORT_KEY_NAME_MAX_LENGTH: 60,
+    REPORT_URL_MAX_LENGTH: 120,
+    INCLUDE_INITIATOR: true,
+    INCLUDE_SERVER_IP: false,
+    MATCH_COUNT_MIN: 2,
+    IGNORE_LIST: [],
+    INCLUDE_LIST: [],
+    REPORT_PARAMS: [],
+    IGNORE_SAME_REQUESTS: true,
+    FILTER_SAME_HOST_URL: true,
+    FILTER_TIMESTAMPS: true,
+    FILTER_URL_VALUES: false,
+}
+```
+
 ## Development
 ### Creating a new module
 

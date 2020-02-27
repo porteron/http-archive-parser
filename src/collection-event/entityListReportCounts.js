@@ -39,15 +39,3 @@ console.log("Data: ", _.differenceBy(df, ss, 'checkSum' ).map(({ checkSum })=>ch
 // Default Unique Roots:  90
 // Same Site Unique Roots:  91
 // Difference By:  11
-
-// Data:  [ 'doubleclick.net',
-//   'google.com',
-//   'google-analytics.com',
-//   'atp.io',
-//   'amazon.com',
-//   'rlcdn.com',
-//   'krxd.net',
-//   'adsymptotic.com',
-//   'agkn.com',
-//   'thebrighttag.com',
-//   'exelator.com' ]
