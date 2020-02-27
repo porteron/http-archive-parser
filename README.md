@@ -105,14 +105,14 @@ Improper modification of these values can lead to unneccessary parsing condition
 
 ### Example Requests for Various Parsing
 **Header Request Format**
-```
+```js
 Headers
 Content-Type	application/json
 mx-token	Ol692%73kBBfR62itn34nkl(sl20Mf8&&fnC7k3-Pwf42*
 ```
 
 #### Shared Strings Parse
-```
+```js
 Request Body
 {
 	"report_type": "sharedStrings",
@@ -122,7 +122,7 @@ Request Body
 ```
 
 #### Entity List Parse
-```
+```js
 Request Body
 {
 	"report_type": "entityList",
@@ -132,7 +132,7 @@ Request Body
 ```
 
 #### HAR Differential 
-```
+```js
 Request Body
 {
 	"report_type": "differential",
