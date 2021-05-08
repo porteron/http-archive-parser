@@ -44,7 +44,7 @@
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
     "tsconfig-paths": "^3.9.0",
-    "typeorm": "^0.2.19",
+    "typeorm": "^0.2.25",
     "ua-parser-js": "^0.7.20"
   },
   "devDependencies": {
