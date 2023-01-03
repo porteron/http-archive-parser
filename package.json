@@ -43,7 +43,7 @@
     "pg": "^7.12.1",
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
-    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths": "^3.10.1",
     "typeorm": "^0.2.45",
     "ua-parser-js": "^0.7.31"
   },
