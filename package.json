@@ -45,7 +45,7 @@
     "rxjs": "^6.3.3",
     "tsconfig-paths": "^3.10.1",
     "typeorm": "^0.2.45",
-    "ua-parser-js": "^0.7.31"
+    "ua-parser-js": "^0.7.33"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.0.0",
