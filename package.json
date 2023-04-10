@@ -32,7 +32,7 @@
     "@nestjs/platform-fastify": "^6.7.1",
     "@nestjs/swagger": "^3.1.0",
     "@nestjs/typeorm": "^6.1.3",
-    "aws-sdk": "^2.1099.0",
+    "aws-sdk": "^2.1354.0",
     "cors": "^2.8.5",
     "fastify-swagger": "^2.4.0",
     "html-metadata": "^1.7.1",
@@ -44,7 +44,7 @@
     "rimraf": "^2.6.2",
     "rxjs": "^6.3.3",
     "tsconfig-paths": "^3.10.1",
-    "typeorm": "^0.2.45",
+    "typeorm": "^0.3.14",
     "ua-parser-js": "^0.7.31"
   },
   "devDependencies": {
